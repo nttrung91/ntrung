@@ -1,0 +1,620 @@
+
+<!DOCTYPE html>
+<html ng-app="cortana">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Objects - Colors</title>
+
+    <!-- Styleguide CSS -->
+    <link rel="stylesheet" href="../bower_components/Cortana/theme-build/css/vendors.css">
+    <link rel="stylesheet" href="../bower_components/Cortana/theme-build/css/cortana.css">
+
+    <!-- Source CSS -->
+    
+      
+        <link rel="stylesheet" href="http://i.icomoon.io/public/e54e770683/Copperside/style.css">
+      
+        <link rel="stylesheet" href="../css/build/minified/global.css">
+      
+    
+
+    <!--[if lt IE 9]>
+      <script src="theme-build/polyfill/html5shiv.js"></script>
+      <script src="theme-build/polyfill/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+  <body class="cortana-body"  ng-controller="MainController">
+
+    <div class="sb-slidebar sb-left cortana-sidenav sb-style-push">
+
+      
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+          
+        
+      
+        
+        
+      
+        
+        
+          
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+
+      <nav class="cortana-nav">
+        <ul>
+          
+            <li><a href="index.html">Home</a></li>
+          
+        </ul>
+        
+          <h3>Utilities</h3>
+          <ul>
+          
+            
+              
+              
+                <li><a href="utilities_-_alignment.html">Alignment</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>Objects</h3>
+          <ul>
+          
+            
+          
+            
+              
+              
+                <li><a href="objects_-_background.html">Background</a></li>
+              
+            
+          
+            
+              
+              
+                <li><a href="objects_-_buttons.html">Buttons</a></li>
+              
+            
+          
+            
+              
+              
+                <li><a class="active" href="objects_-_colors.html">Colors</a></li>
+              
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="objects_-_dividers.html">Dividers</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="objects_-_typography.html">Typography</a></li>
+              
+            
+          
+            
+          
+          </ul>
+        
+          <h3>Components</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="components_-_container.html">Container</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="components_-_hamburger.html">Hamburger</a></li>
+              
+            
+          
+            
+              
+              
+                <li><a href="components_-_hover.html">Hover</a></li>
+              
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="components_-_logo.html">Logo</a></li>
+              
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>Layouts</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="layouts_-_grid.html">Grid</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="layouts_-_layout.html">Layout</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="layouts_-_vertical_align.html">Vertical Align</a></li>
+              
+            
+          
+          </ul>
+        
+      </nav>
+    </div>
+
+    <header class="cortana-header sb-slide">
+      
+        <h1>Colors</h1>
+      
+      <div id="open-left" class="cortana-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="cortana-search-wrapper" ng-controller="TypeaheadCtrl">
+        <input id="cortana-search" type="text" class="form-control cortana-search" ng-model="customSelected" placeholder="Search" typeahead="data as data.title for data in searchData | filter:{title:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control" typeahead-on-select="onSelect($item, $model, $label)">
+      </div>
+    </header>
+
+    <div id="sb-site">
+
+      <div class="cortana-container">
+
+        <nav id="cortana-inside-nav" class="cortana-inside-nav" bs-affix>
+          <ul bs-scrollspy-list data-offset="-30">
+            
+              
+                <li><a href="#Colors">Colors</a></li>
+              
+            
+          </ul>
+        </nav>
+
+        <div class="cortana-content-wrapper clearfix">
+          <div class="cortana-content">
+
+
+
+<h1 id="Colors">Colors</h1>
+
+<h4>Brand Colors</h4>
+
+<div class="grid">
+  <div class="col-sm-12 col-md-3">
+    <div class="chip">
+      <div class="chip-color bg-brand-1"></div>
+      <div class="chip-color-name">
+        <p>$brand-1</p>
+        <p>.bg-brand-1</p>
+        <p>.type-brand-1</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h4>Neutral Colors</h4>
+
+<div class="grid">
+  <div class="col-sm-12 col-md-3">
+    <div class="chip">
+      <div class="chip-color bg-neutral-1"></div>
+      <div class="chip-color-name">
+        <p>$gray-1</p>
+        <p>.bg-neutral-1</p>
+        <p>.type-neutral-1</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-12 col-md-3">
+    <div class="chip">
+      <div class="chip-color bg-neutral-2"></div>
+      <div class="chip-color-name">
+        <p>$gray-2</p>
+        <p>.bg-neutral-2</p>
+        <p>.type-neutral-2</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-12 col-md-3">
+    <div class="chip">
+      <div class="chip-color bg-neutral-3"></div>
+      <div class="chip-color-name">
+        <p>$gray-3</p>
+        <p>.bg-neutral-3</p>
+        <p>.type-neutral-3</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-12 col-md-3">
+    <div class="chip">
+      <div class="chip-color bg-neutral-4"></div>
+      <div class="chip-color-name">
+        <p>$gray-4</p>
+        <p>.bg-neutral-4</p>
+        <p>.type-neutral-4</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-12 col-md-3">
+    <div class="chip">
+      <div class="chip-color bg-neutral-5"></div>
+      <div class="chip-color-name">
+        <p>$gray-4</p>
+        <p>.bg-neutral-5</p>
+        <p>.type-neutral-5</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h4>Warn Colors</h4>
+
+<div class="grid">
+  <div class="col-sm-12 col-md-3">
+    <div class="chip">
+      <div class="chip-color bg-warn-1"></div>
+      <div class="chip-color-name">
+        <p>$warn-1</p>
+        <p>.bg-warn-1</p>
+        <p>.type-warn-1</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h4>Accent Colors</h4>
+
+<div class="grid">
+  <div class="col-sm-12 col-md-3">
+    <div class="chip">
+      <div class="chip-color bg-accent-1"></div>
+      <div class="chip-color-name">
+        <p>$accent-1</p>
+        <p>.bg-accent-1</p>
+        <p>.type-accent-1</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="cortana-footer">
+      Build with love using Trulia's <a href="https://github.com/trulia/hologram">Hologram</a> and <a href="https://github.com/Yago/Cortana">Cortana</a> !
+    </footer>
+  </div>
+
+  <script src="../bower_components/Cortana/theme-build/js/vendors.min.js"></script>
+  <script type="text/javascript">
+    var jQuery_no_conflict = $.noConflict(true);
+  </script>
+  <script src="../bower_components/Cortana/theme-build/js/main.js"></script>
+  <script type="text/javascript">
+    function TypeaheadCtrl($scope) {
+      $scope.selected = undefined;
+      $scope.searchData =
+      [
+        
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Alignment",
+              "breadcrumb": "Utilities - Alignment > Alignment",
+              "path": "utilities_-_alignment.html#Alignment"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Background",
+              "breadcrumb": "Objects - Background > Background",
+              "path": "objects_-_background.html#Background"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Buttons",
+              "breadcrumb": "Objects - Buttons > Buttons",
+              "path": "objects_-_buttons.html#Buttons"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Colors",
+              "breadcrumb": "Objects - Colors > Colors",
+              "path": "objects_-_colors.html#Colors"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Container",
+              "breadcrumb": "Components - Container > Container",
+              "path": "components_-_container.html#Container"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Dividers",
+              "breadcrumb": "Objects - Dividers > Dividers",
+              "path": "objects_-_dividers.html#Dividers"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Grid",
+              "breadcrumb": "Layouts - Grid > Grid",
+              "path": "layouts_-_grid.html#Grid"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Hamburger",
+              "breadcrumb": "Components - Hamburger > Hamburger",
+              "path": "components_-_hamburger.html#Hamburger"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Hover",
+              "breadcrumb": "Components - Hover > Hover",
+              "path": "components_-_hover.html#Hover"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Layout",
+              "breadcrumb": "Layouts - Layout > Layout",
+              "path": "layouts_-_layout.html#Layout"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Logo",
+              "breadcrumb": "Components - Logo > Logo",
+              "path": "components_-_logo.html#Logo"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Typography",
+              "breadcrumb": "Objects - Typography > Typography",
+              "path": "objects_-_typography.html#Typography"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Vertical Align",
+              "breadcrumb": "Layouts - Vertical Align > Vertical Align",
+              "path": "layouts_-_vertical_align.html#Vertical Align"
+              },
+            
+          
+        
+          
+        
+      {}];
+      $scope.onSelect = function ($item, $model, $label) {
+        window.location.replace($item.path);
+      };
+    }
+  </script>
+  <script type="text/ng-template" id="customTemplate.html">
+    <a href="{{match.model.path}}">
+      <p class="cortana-search-title">{{match.model.title}}</p>
+      <p class="cortana-search-path">{{match.model.breadcrumb}}</p>
+    </a>
+  </script>
+  
+    
+      <script type="text/javascript" src="../js/build/production.min.js"></script>
+    
+  
+  <!-- Source Components -->
+  
+</body>
+</html>

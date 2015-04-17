@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html ng-app="cortana">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Components - Hamburger</title>
+
+    <!-- Styleguide CSS -->
+    <link rel="stylesheet" href="../bower_components/Cortana/theme-build/css/vendors.css">
+    <link rel="stylesheet" href="../bower_components/Cortana/theme-build/css/cortana.css">
+
+    <!-- Source CSS -->
+    
+      
+        <link rel="stylesheet" href="http://i.icomoon.io/public/e54e770683/Copperside/style.css">
+      
+        <link rel="stylesheet" href="../css/build/minified/global.css">
+      
+    
+
+    <!--[if lt IE 9]>
+      <script src="theme-build/polyfill/html5shiv.js"></script>
+      <script src="theme-build/polyfill/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+  <body class="cortana-body"  ng-controller="MainController">
+
+    <div class="sb-slidebar sb-left cortana-sidenav sb-style-push">
+
+      
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+          
+        
+      
+        
+        
+      
+        
+        
+          
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+
+      <nav class="cortana-nav">
+        <ul>
+          
+            <li><a href="index.html">Home</a></li>
+          
+        </ul>
+        
+          <h3>Utilities</h3>
+          <ul>
+          
+            
+              
+              
+                <li><a href="utilities_-_alignment.html">Alignment</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>Objects</h3>
+          <ul>
+          
+            
+          
+            
+              
+              
+                <li><a href="objects_-_background.html">Background</a></li>
+              
+            
+          
+            
+              
+              
+                <li><a href="objects_-_buttons.html">Buttons</a></li>
+              
+            
+          
+            
+              
+              
+                <li><a href="objects_-_colors.html">Colors</a></li>
+              
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="objects_-_dividers.html">Dividers</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="objects_-_typography.html">Typography</a></li>
+              
+            
+          
+            
+          
+          </ul>
+        
+          <h3>Components</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="components_-_container.html">Container</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a class="active" href="components_-_hamburger.html">Hamburger</a></li>
+              
+            
+          
+            
+              
+              
+                <li><a href="components_-_hover.html">Hover</a></li>
+              
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="components_-_logo.html">Logo</a></li>
+              
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>Layouts</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="layouts_-_grid.html">Grid</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="layouts_-_layout.html">Layout</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="layouts_-_vertical_align.html">Vertical Align</a></li>
+              
+            
+          
+          </ul>
+        
+      </nav>
+    </div>
+
+    <header class="cortana-header sb-slide">
+      
+        <h1>Hamburger</h1>
+      
+      <div id="open-left" class="cortana-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="cortana-search-wrapper" ng-controller="TypeaheadCtrl">
+        <input id="cortana-search" type="text" class="form-control cortana-search" ng-model="customSelected" placeholder="Search" typeahead="data as data.title for data in searchData | filter:{title:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control" typeahead-on-select="onSelect($item, $model, $label)">
+      </div>
+    </header>
+
+    <div id="sb-site">
+
+      <div class="cortana-container">
+
+        <nav id="cortana-inside-nav" class="cortana-inside-nav" bs-affix>
+          <ul bs-scrollspy-list data-offset="-30">
+            
+              
+                <li><a href="#Hamburger">Hamburger</a></li>
+              
+            
+          </ul>
+        </nav>
+
+        <div class="cortana-content-wrapper clearfix">
+          <div class="cortana-content">
+
+
+
+<h1 id="Hamburger">Hamburger</h1>
+</div><div class="codeExample"><div class="exampleOutput">
+<div class="aligner bg-neutral-1">
+  <div class="aligner-item txt-c">
+    <a href="#" class="hamburger js-nav-toggle" style="display: inline-block;">
+      <span class="hamburger-bun hamburger-bun--top"></span>
+      <span class="hamburger-patty"></span>
+      <span class="hamburger-bun hamburger-bun--btm"></span>
+    </a>
+  </div>
+</div>
+
+</div><div class="codeBlock"><div class="highlight"><pre>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"aligner bg-neutral-1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"aligner-item txt-c"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"hamburger js-nav-toggle"</span> <span class="na">style=</span><span class="s">"display: inline-block;"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"hamburger-bun hamburger-bun--top"</span><span class="nt">&gt;&lt;/span&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"hamburger-patty"</span><span class="nt">&gt;&lt;/span&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"hamburger-bun hamburger-bun--btm"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+</pre></div></div></div><div class="cortana-content">
+        </div>
+      </div>
+    </div>
+
+    <footer class="cortana-footer">
+      Build with love using Trulia's <a href="https://github.com/trulia/hologram">Hologram</a> and <a href="https://github.com/Yago/Cortana">Cortana</a> !
+    </footer>
+  </div>
+
+  <script src="../bower_components/Cortana/theme-build/js/vendors.min.js"></script>
+  <script type="text/javascript">
+    var jQuery_no_conflict = $.noConflict(true);
+  </script>
+  <script src="../bower_components/Cortana/theme-build/js/main.js"></script>
+  <script type="text/javascript">
+    function TypeaheadCtrl($scope) {
+      $scope.selected = undefined;
+      $scope.searchData =
+      [
+        
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Alignment",
+              "breadcrumb": "Utilities - Alignment > Alignment",
+              "path": "utilities_-_alignment.html#Alignment"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Background",
+              "breadcrumb": "Objects - Background > Background",
+              "path": "objects_-_background.html#Background"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Buttons",
+              "breadcrumb": "Objects - Buttons > Buttons",
+              "path": "objects_-_buttons.html#Buttons"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Colors",
+              "breadcrumb": "Objects - Colors > Colors",
+              "path": "objects_-_colors.html#Colors"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Container",
+              "breadcrumb": "Components - Container > Container",
+              "path": "components_-_container.html#Container"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Dividers",
+              "breadcrumb": "Objects - Dividers > Dividers",
+              "path": "objects_-_dividers.html#Dividers"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Grid",
+              "breadcrumb": "Layouts - Grid > Grid",
+              "path": "layouts_-_grid.html#Grid"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Hamburger",
+              "breadcrumb": "Components - Hamburger > Hamburger",
+              "path": "components_-_hamburger.html#Hamburger"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Hover",
+              "breadcrumb": "Components - Hover > Hover",
+              "path": "components_-_hover.html#Hover"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Layout",
+              "breadcrumb": "Layouts - Layout > Layout",
+              "path": "layouts_-_layout.html#Layout"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Logo",
+              "breadcrumb": "Components - Logo > Logo",
+              "path": "components_-_logo.html#Logo"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Typography",
+              "breadcrumb": "Objects - Typography > Typography",
+              "path": "objects_-_typography.html#Typography"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Vertical Align",
+              "breadcrumb": "Layouts - Vertical Align > Vertical Align",
+              "path": "layouts_-_vertical_align.html#Vertical Align"
+              },
+            
+          
+        
+          
+        
+      {}];
+      $scope.onSelect = function ($item, $model, $label) {
+        window.location.replace($item.path);
+      };
+    }
+  </script>
+  <script type="text/ng-template" id="customTemplate.html">
+    <a href="{{match.model.path}}">
+      <p class="cortana-search-title">{{match.model.title}}</p>
+      <p class="cortana-search-path">{{match.model.breadcrumb}}</p>
+    </a>
+  </script>
+  
+    
+      <script type="text/javascript" src="../js/build/production.min.js"></script>
+    
+  
+  <!-- Source Components -->
+  
+</body>
+</html>
