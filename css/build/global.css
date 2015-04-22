@@ -5804,6 +5804,7 @@ h3, .h3 {
 h4, .h4 {
   font-size: 16px;
   font-size: 1rem;
+  margin-bottom: 0.5em;
 }
 
 h5, .h5 {
@@ -6845,10 +6846,33 @@ category: Components - Hamburger
   }
 }
 
-.project__content > p {
-  padding: 20px;
+.project__content {
+  padding: 0 20px;
   max-width: 42em;
   margin: auto;
+}
+@media screen and (min-width: 900px) {
+  .project__content {
+    padding: 0 40px;
+  }
+}
+
+.project__content ul {
+  list-style: circle;
+  padding-left: 20px;
+}
+
+.project__content h1,
+.project__content h2,
+.project__content h3,
+.project__content h4,
+.project__content h5,
+.project__content h6 {
+  text-transform: uppercase;
+}
+
+.project__content > ul {
+  margin: 20px 0;
 }
 
 .project__content > p + p {
@@ -6856,7 +6880,7 @@ category: Components - Hamburger
 }
 
 .project__content > p > img {
-  margin: 1em 0;
+  margin: 3em 0;
 }
 
 .project__title {
@@ -6869,7 +6893,7 @@ category: Components - Hamburger
 }
 
 .project__type {
-  padding-bottom: 10px;
+  padding-bottom: 30px;
 }
 @media screen and (min-width: 900px) {
   .project__type {
