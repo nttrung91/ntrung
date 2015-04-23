@@ -7373,29 +7373,20 @@ category: Components - Hamburger
 }
 
 .project__content {
-  padding: 0 20px;
+  padding: 0 20px 50px;
   max-width: 42em;
   margin: auto;
 }
 
 @media screen and (min-width: 900px) {
   .project__content {
-    padding: 0 40px;
+    padding: 0 40px 100px;
   }
 }
 
 .project__content ul {
   list-style: circle;
   padding-left: 20px;
-}
-
-.project__content h1,
-.project__content h2,
-.project__content h3,
-.project__content h4,
-.project__content h5,
-.project__content h6 {
-  text-transform: uppercase;
 }
 
 .project__content > ul {
