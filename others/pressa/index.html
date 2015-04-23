@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pressa</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="description" content="The Makers' Blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="stylesheet" href="css/build/minified/global.css">
+</head>
+<body>
+<div class="scene" id="main"></div>
+<div class="app">
+  <audio id="sound" preload="auto">
+  </audio>
+
+  <!-- The Top Section -->
+  <div class="top">
+    <!-- <a href="/" class="logo">Pressa</a> -->
+    <!-- Result Module -->
+    <section class="module--result">
+
+      <!-- The result displays here -->
+      <div class="result__wrap">
+
+        <button class="btn btnDefault btnCircle fontawesome-remove float-right btnClear" id="clear"></button>
+
+        <button class="btn btnDefault btnCircle fontawesome-volume-down float-right btnGo" id="go"></button>
+
+        <!-- Result Field -->
+        <div class="resultField">
+          <span class="result" placeholder="press on a word"></span>
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- The main interaction -->
+  <div class="main">
+    <!-- Pronoun Module -->
+    <aside class="module--pronoun">
+      <div class="placeholder"></div>
+      <!-- The collection of all the verbs -->
+      <ul class="pronouns">
+
+        <li class="pronoun">
+          <button class="btn btnDefault btnPronoun" data-tts="I">
+            I
+          </button>
+        </li>
+
+        <li class="pronoun">
+          <button class="btn btnDefault btnPronoun" data-tts="you">
+            you
+          </button>
+        </li>
+
+        <li class="pronoun">
+          <button class="btn btnDefault btnPronoun" data-tts="we">
+            we
+          </button>
+        </li>
+
+        <li class="pronoun">
+          <button class="btn btnDefault btnPronoun" data-tts="me">
+            me
+          </button>
+        </li>
+
+        <li class="pronoun">
+          <button class="btn btnDefault btnPronoun" data-tts="he">
+            he
+          </button>
+        </li>
+
+        <li class="pronoun">
+          <button class="btn btnDefault btnPronoun" data-tts="she">
+            she
+          </button>
+        </li>
+
+        <li class="pronoun">
+          <button class="btn btnDefault btnPronoun" data-tts="it">
+            it
+          </button>
+        </li>
+
+        <li class="pronoun">
+          <button class="btn btnDefault btnPronoun" data-tts="they">
+            they
+          </button>
+        </li>
+
+      </ul>
+    </aside>
+
+    <!-- Verb Module -->
+    <aside class="module--verb">
+      <div class="placeholder"></div>
+
+      <!-- The collection of all the verbs -->
+      <ul class="verbs">
+
+        <li class="verb">
+          <button class="btn btnDefault btnVerb" data-tts="love">
+            love
+          </button>
+        </li>
+
+        <li class="verb">
+          <button class="btn btnDefault btnVerb" data-tts="want">
+            want
+          </button>
+        </li>
+
+        <li class="verb">
+          <button class="btn btnDefault btnVerb" data-tts="like">
+            like
+          </button>
+        </li>
+
+        <li class="verb">
+          <button class="btn btnDefault btnVerb" data-tts="feel">
+            feel
+          </button>
+        </li>
+
+        <li class="verb">
+          <button class="btn btnDefault btnVerb" data-tts="need">
+            need
+          </button>
+        </li>
+
+        <li class="verb">
+          <button class="btn btnDefault btnVerb" data-tts="hug">
+            hug
+          </button>
+        </li>
+
+        <li class="verb">
+          <button class="btn btnDefault btnVerb" data-tts="eat">
+            eat
+          </button>
+        </li>
+
+        <li class="verb">
+          <button class="btn btnDefault btnVerb" data-tts="play">
+            play
+          </button>
+        </li>
+
+        <li class="verb">
+          <button class="btn btnDefault btnVerb" data-tts="watch">
+            watch
+          </button>
+        </li>
+
+        <li class="verb">
+          <button class="btn btnDefault btnVerb" data-tts="am">
+            am
+          </button>
+        </li>
+
+        <li class="verb">
+          <button class="btn btnDefault btnVerb" data-tts="are">
+            are
+          </button>
+        </li>
+
+        <li class="verb">
+          <button class="btn btnDefault btnVerb" data-tts="to">
+            to
+          </button>
+        </li>
+
+        <li class="verb">
+          <button class="btn btnDefault btnVerb" data-tts="with">
+            with
+          </button>
+        </li>
+
+      </ul>
+
+    </aside>
+
+
+
+    <section class="module--noun">
+      <div class="placeholder"></div>
+      <!-- The collection of all the nouns -->
+      <ul class="collections">
+
+        <li class="collection">
+          <button class="btn btnSkin1 btnCollection" data-collection="family">
+            <div class="imgWrap">
+              <img src="images/family/parent.png" alt="Apple">
+            </div>
+            <span class="imgDescription">
+              Family
+            </span>
+          </button>
+        </li>
+
+        <li class="collection">
+          <button class="btn btnSkin1 btnCollection" data-collection="food">
+            <div class="imgWrap">
+              <img src="images/food/sushi.png" alt="food">
+            </div>
+
+            <span class="imgDescription">
+              Food
+            </span>
+          </button>
+        </li>
+
+        <li class="collection">
+          <button class="btn btnSkin1 btnCollection" data-collection="emotion">
+            <div class="imgWrap">
+              <img src="images/emotion/happy.png" alt="Emotion">
+            </div>
+
+            <span class="imgDescription">
+              Emotions
+            </span>
+          </button>
+        </li>
+
+
+        <li class="collection">
+          <button class="btn btnSkin1 btnCollection" data-collection="fruit">
+            <div class="imgWrap">
+              <img src="images/fruit/watermelon.png" alt="Fruit">
+            </div>
+
+            <span class="imgDescription">
+              Fruits
+            </span>
+          </button>
+        </li>
+
+
+        <li class="collection">
+          <button class="btn btnSkin1 btnCollection" data-collection="animal">
+            <div class="imgWrap">
+              <img src="images/animal/dog.png" alt="Animal">
+            </div>
+
+            <span class="imgDescription">
+              Animals
+            </span>
+          </button>
+        </li>
+
+
+        <li class="collection">
+          <button class="btn btnSkin1 btnCollection" data-collection="superhero">
+            <div class="imgWrap">
+              <img src="images/superhero/batman.png" alt="Characters">
+            </div>
+
+            <span class="imgDescription">
+              Superheroes
+            </span>
+          </button>
+        </li>
+
+
+        <li class="collection">
+          <button class="btn btnSkin1 btnCollection" data-collection="landmark">
+            <div class="imgWrap">
+              <img src="images/landmark/Golden.png" alt="landmark">
+            </div>
+            <span class="imgDescription">
+              Landmarks
+            </span>
+          </button>
+        </li>
+
+        <li class="collection">
+          <button class="btn btnSkin1 btnCollection" data-collection="hobby">
+            <div class="imgWrap">
+              <img src="images/hobby/Guitar.png" alt="Hobby">
+            </div>
+
+            <span class="imgDescription">
+              Hobbies
+            </span>
+          </button>
+        </li>
+
+
+
+        <li class="collection">
+          <button class="btn btnSkin1 btnCollection" data-collection="bugs">
+            <div class="imgWrap">
+              <img src="images/bugs/butterfly.png" alt="Characters">
+            </div>
+
+            <span class="imgDescription">
+              Bugs
+            </span>
+          </button>
+        </li>
+
+
+      </ul>
+
+      <ul class="nouns">
+        <div class="placeholder"></div>
+        <button class="btn btnBack">Back</button>
+
+
+        <li class="noun" data-noun="family">
+
+         <button class="btn btnSkin1 word" data-tts="daddy">
+            <div class="imgWrap">
+              <img src="images/family/daddy.png" alt="Parent">
+            </div>
+
+            <span class="imgDescription">
+              Daddy
+            </span>
+          </button>
+
+          <button class="btn btnSkin1 word" data-tts="mommy">
+            <div class="imgWrap">
+              <img src="images/family/mommy.png" alt="Parent">
+            </div>
+
+            <span class="imgDescription">
+              Mommy
+            </span>
+          </button>
+
+          <button class="btn btnSkin1 word" data-tts="brother">
+             <div class="imgWrap">
+               <img src="images/family/brother.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               Brother
+             </span>
+           </button>
+
+           <button class="btn btnSkin1 word" data-tts="sister">
+             <div class="imgWrap">
+               <img src="images/family/sister.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               Sister
+             </span>
+           </button>
+
+        </li>
+
+        <li class="noun" data-noun="food">
+
+         <button class="btn btnSkin1 word" data-tts="muffin">
+            <div class="imgWrap">
+              <img src="images/food/muffin.png" alt="Muffin">
+            </div>
+
+            <span class="imgDescription">
+              Muffin
+            </span>
+          </button>
+
+          <button class="btn btnSkin1 word" data-tts="cake">
+            <div class="imgWrap">
+              <img src="images/food/cake.png" alt="Cake">
+            </div>
+
+            <span class="imgDescription">
+              Cake
+            </span>
+          </button>
+
+          <button class="btn btnSkin1 word" data-tts="bread">
+             <div class="imgWrap">
+               <img src="images/food/bread.png" alt="Bread">
+             </div>
+
+             <span class="imgDescription">
+               Bread
+             </span>
+           </button>
+
+           <button class="btn btnSkin1 word" data-tts="egg">
+             <div class="imgWrap">
+               <img src="images/food/egg.png" alt="Egg">
+             </div>
+
+             <span class="imgDescription">
+               Egg
+             </span>
+           </button>
+
+           <button class="btn btnSkin1 word" data-tts="hotdog">
+             <div class="imgWrap">
+               <img src="images/food/hotdog.png" alt="Hotdog">
+             </div>
+
+             <span class="imgDescription">
+               Hotdog
+             </span>
+           </button>
+
+           <button class="btn btnSkin1 word" data-tts="sushi">
+             <div class="imgWrap">
+               <img src="images/food/sushi.png" alt="sushi">
+             </div>
+
+             <span class="imgDescription">
+               Sushi
+             </span>
+           </button>
+
+        </li>
+
+
+        <li class="noun" data-noun="emotion">
+
+         <button class="btn btnSkin1 word" data-tts="happy">
+            <div class="imgWrap">
+              <img src="images/emotion/happy.png" alt="Parent">
+            </div>
+
+            <span class="imgDescription">
+              Happy
+            </span>
+          </button>
+
+          <button class="btn btnSkin1 word" data-tts="sad">
+            <div class="imgWrap">
+              <img src="images/emotion/sad.png" alt="Parent">
+            </div>
+
+            <span class="imgDescription">
+              Sad
+            </span>
+          </button>
+
+          <button class="btn btnSkin1 word" data-tts="angry">
+             <div class="imgWrap">
+               <img src="images/emotion/angry.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               Angry
+             </span>
+           </button>
+
+           <button class="btn btnSkin1 word" data-tts="surprise">
+             <div class="imgWrap">
+               <img src="images/emotion/surprise.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               Surprise
+             </span>
+           </button>
+
+           <button class="btn btnSkin1 word" data-tts="cool">
+             <div class="imgWrap">
+               <img src="images/emotion/cool.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               Cool
+             </span>
+           </button>
+
+        </li>
+
+        <li class="noun" data-noun="animal">
+
+         <button class="btn btnSkin1 word" data-tts="a+dog">
+            <div class="imgWrap">
+              <img src="images/animal/dog.png" alt="Parent">
+            </div>
+
+            <span class="imgDescription">
+              Dog
+            </span>
+          </button>
+
+          <button class="btn btnSkin1 word" data-tts="a+cat">
+            <div class="imgWrap">
+              <img src="images/animal/cat.png" alt="Parent">
+            </div>
+
+            <span class="imgDescription">
+              Cat
+            </span>
+          </button>
+
+          <button class="btn btnSkin1 word" data-tts="a+cow">
+             <div class="imgWrap">
+               <img src="images/animal/cow.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               Cow
+             </span>
+           </button>
+
+           <button class="btn btnSkin1 word" data-tts="a+deer">
+             <div class="imgWrap">
+               <img src="images/animal/deer.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               Deer
+             </span>
+           </button>
+
+           <button class="btn btnSkin1 word" data-tts="a+panda">
+             <div class="imgWrap">
+               <img src="images/animal/panda.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               Panda
+             </span>
+           </button>
+
+           <button class="btn btnSkin1 word" data-tts="fish">
+             <div class="imgWrap">
+               <img src="images/animal/fish.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               Fish
+             </span>
+           </button>
+
+        </li>
+
+
+        <li class="noun" data-noun="landmark">
+
+         <button class="btn btnSkin1 word" data-tts="Rome">
+            <div class="imgWrap">
+              <img src="images/landmark/Coliseum.png" alt="Parent">
+            </div>
+
+            <span class="imgDescription">
+              Rome
+            </span>
+          </button>
+
+          <button class="btn btnSkin1 word" data-tts="Paris">
+            <div class="imgWrap">
+              <img src="images/landmark/Eiffel.png" alt="Parent">
+            </div>
+
+            <span class="imgDescription">
+              Paris
+            </span>
+          </button>
+
+          <button class="btn btnSkin1 word" data-tts="New+York">
+             <div class="imgWrap">
+               <img src="images/landmark/Empire.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               New York
+             </span>
+           </button>
+
+           <button class="btn btnSkin1 word" data-tts="San+Francisco">
+             <div class="imgWrap">
+               <img src="images/landmark/Golden.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               San Francisco
+             </span>
+           </button>
+
+           <button class="btn btnSkin1 word" data-tts="Cairo">
+             <div class="imgWrap">
+               <img src="images/landmark/Pyramids.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               Cairo
+             </span>
+           </button>
+
+        </li>
+
+
+        <li class="noun" data-noun="hobby">
+
+         <button class="btn btnSkin1 word" data-tts="basketball">
+            <div class="imgWrap">
+              <img src="images/hobby/Basketball.png" alt="Parent">
+            </div>
+
+            <span class="imgDescription">
+              Basketball
+            </span>
+          </button>
+
+          <button class="btn btnSkin1 word" data-tts="easel">
+            <div class="imgWrap">
+              <img src="images/hobby/Easel.png" alt="Parent">
+            </div>
+
+            <span class="imgDescription">
+              Easel
+            </span>
+          </button>
+
+          <button class="btn btnSkin1 word" data-tts="guitar">
+             <div class="imgWrap">
+               <img src="images/hobby/Guitar.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               Guitar
+             </span>
+           </button>
+
+           <button class="btn btnSkin1 word" data-tts="hiking">
+             <div class="imgWrap">
+               <img src="images/hobby/Hiking.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               Hiking
+             </span>
+           </button>
+
+
+        </li>
+
+
+        <li class="noun" data-noun="fruit">
+
+         <button class="btn btnSkin1 word" data-tts="apple">
+            <div class="imgWrap">
+              <img src="images/fruit/apple.png" alt="Parent">
+            </div>
+
+            <span class="imgDescription">
+              Apple
+            </span>
+          </button>
+
+          <button class="btn btnSkin1 word" data-tts="avocado">
+            <div class="imgWrap">
+              <img src="images/fruit/avocado.png" alt="Parent">
+            </div>
+
+            <span class="imgDescription">
+              Avocado
+            </span>
+          </button>
+
+          <button class="btn btnSkin1 word" data-tts="banana">
+             <div class="imgWrap">
+               <img src="images/fruit/banana.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               Banana
+             </span>
+           </button>
+
+           <button class="btn btnSkin1 word" data-tts="grapes">
+             <div class="imgWrap">
+               <img src="images/fruit/grapes.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               Grapes
+             </span>
+           </button>
+
+           <button class="btn btnSkin1 word" data-tts="pineapple">
+             <div class="imgWrap">
+               <img src="images/fruit/pineapple.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               Pineapple
+             </span>
+           </button>
+
+           <button class="btn btnSkin1 word" data-tts="watermelon">
+             <div class="imgWrap">
+               <img src="images/fruit/watermelon.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               Watermelon
+             </span>
+           </button>
+
+
+        </li>
+
+        <li class="noun" data-noun="superhero">
+
+         <button class="btn btnSkin1 word" data-tts="Batman">
+            <div class="imgWrap">
+              <img src="images/superhero/batman.png" alt="Parent">
+            </div>
+
+            <span class="imgDescription">
+              Batman
+            </span>
+          </button>
+
+          <button class="btn btnSkin1 word" data-tts="Iron+Man">
+            <div class="imgWrap">
+              <img src="images/superhero/ironman.png" alt="Parent">
+            </div>
+
+            <span class="imgDescription">
+              Iron Man
+            </span>
+          </button>
+
+          <button class="btn btnSkin1 word" data-tts="Spiderman">
+             <div class="imgWrap">
+               <img src="images/superhero/spiderman.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               Spiderman
+             </span>
+           </button>
+
+          <button class="btn btnSkin1 word" data-tts="Wolverine">
+             <div class="imgWrap">
+               <img src="images/superhero/wolverine.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               Wolverine
+             </span>
+           </button>
+
+        </li>
+
+
+        <li class="noun" data-noun="bugs">
+
+         <button class="btn btnSkin1 word" data-tts="butterfly">
+            <div class="imgWrap">
+              <img src="images/bugs/butterfly.png" alt="Parent">
+            </div>
+
+            <span class="imgDescription">
+              Butterfly
+            </span>
+          </button>
+
+          <button class="btn btnSkin1 word" data-tts="ladybug">
+            <div class="imgWrap">
+              <img src="images/bugs/ladybug.png" alt="Parent">
+            </div>
+
+            <span class="imgDescription">
+              Ladybug
+            </span>
+          </button>
+
+          <button class="btn btnSkin1 word" data-tts="ant">
+             <div class="imgWrap">
+               <img src="images/bugs/ant.png" alt="Parent">
+             </div>
+
+             <span class="imgDescription">
+               Ant
+             </span>
+           </button>
+
+
+        </li>
+      </ul>
+
+    </section>
+  </div>
+
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script src="js/build/production.min.js"></script>
+
+</body>
+</html>
