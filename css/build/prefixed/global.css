@@ -5463,6 +5463,32 @@ Constrain the width down to `xx pixels` (apply on Big Screen)
     ~ LAYOUT
 \*------------------------------------*/
 
+@media screen and (min-width: 900px) {
+  .layout-constrained {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .layout-constrained--large {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .layout-push-in {
+    padding: 40px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .layout-compressed {
+    margin: 100px 0;
+  }
+}
+
 /*doc
 ---
 title: Vertical Align
@@ -5657,7 +5683,7 @@ button {
 }
 
 /*----------------------------*\
-    ~ STYLES
+    ~ SKINS
 \*----------------------------*/
 
 .btn-default {

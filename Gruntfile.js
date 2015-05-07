@@ -5,6 +5,7 @@ module.exports = function(grunt) {
 
     pkg: grunt.file.readJSON('package.json'),
 
+    // Styleguide Generation tool
     hologram: {
       generate: {
         options: {
@@ -13,6 +14,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // CSS Preprocessor
     sass: { // Task
       dist: { // Target
         options: {
@@ -26,6 +28,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // Add Prefixes to CSS properties
     autoprefixer: {
       options: {
         browsers: ['last 2 version', 'ie 8' ,'ie 9']
@@ -38,6 +41,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // Minified CSS
     cssmin: {
       combine: {
         files: {
@@ -46,10 +50,12 @@ module.exports = function(grunt) {
       }
     },
 
+    // Hint error when compile JS
     jshint: {
       beforeconcat: ['js/*.js']
     },
 
+    // Combine all JS files together
     concat: {
       dist: {
         // Order matter
@@ -63,6 +69,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // Minify JS Files
     uglify: {
       build: {
         src: 'js/build/production.js',
@@ -70,6 +77,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // Image optimization
     imagemin: {
       dynamic: {
         files: [{
@@ -81,6 +89,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // Enable the use of command line
     shell : {
       jekyllBuild : {
         command : 'jekyll build'
@@ -90,6 +99,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // Actively listening to changes
     watch: {
       options: {
         livereload: true,
@@ -112,15 +122,15 @@ module.exports = function(grunt) {
           spawn: false,
         }
       },
-      // hologram: {
-      //   files: [
-      //   'hologram_config.yml',
-      //   'scss/*/*.scss',
-      //   'scss/*/*/*.scss',
-      //   'doc_assets/*'
-      //   ],
-      //   tasks: ["hologram"]
-      // },
+      hologram: {
+        files: [
+        'hologram_config.yml',
+        'scss/*/*.scss',
+        'scss/*/*/*.scss',
+        'doc_assets/*'
+        ],
+        tasks: ["hologram"]
+      },
       images: {
         files: ['images/**/*.{png,jpg,gif}', 'images/*.{png,jpg,gif}'],
         tasks: ['newer:imagemin','shell:jekyllBuild'],
@@ -157,6 +167,9 @@ module.exports = function(grunt) {
 
 
   require('load-grunt-tasks')(grunt);
+
+  // Time how long tasks take. Can help when optimizing build times
+  require('time-grunt')(grunt);
 
   // Default Task is basically a rebuild
   grunt.registerTask('default', ['concat', 'uglify', 'sass', 'imagemin','shell:jekyllBuild']);

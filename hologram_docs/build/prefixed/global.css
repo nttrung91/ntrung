@@ -5463,6 +5463,32 @@ Constrain the width down to `xx pixels` (apply on Big Screen)
     ~ LAYOUT
 \*------------------------------------*/
 
+@media screen and (min-width: 900px) {
+  .layout-constrained {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .layout-constrained--large {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .layout-push-in {
+    padding: 40px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .layout-compressed {
+    margin: 100px 0;
+  }
+}
+
 /*doc
 ---
 title: Vertical Align
@@ -5634,8 +5660,8 @@ button {
 
 @media screen and (min-width: 900px) {
   .btn {
-    font-size: 6px;
-    font-size: 0.375rem;
+    font-size: 5.5px;
+    font-size: 0.34375rem;
   }
 }
 
@@ -5657,7 +5683,7 @@ button {
 }
 
 /*----------------------------*\
-    ~ STYLES
+    ~ SKINS
 \*----------------------------*/
 
 .btn-default {
@@ -5695,8 +5721,8 @@ button {
 .btn-default-alt--light {
   -webkit-transition: background 70ms ease-in, color 70ms ease-in;
   transition: background 70ms ease-in, color 70ms ease-in;
-  border: 1px solid #979797;
-  color: #979797;
+  border: 1px solid #616161;
+  color: #616161;
   background: transparent;
 }
 
@@ -5705,8 +5731,8 @@ button {
 .btn-default-alt--light:focus {
   -webkit-transition: background 70ms ease-in, color 70ms ease-in;
   transition: background 70ms ease-in, color 70ms ease-in;
-  background: #979797;
-  color: #313131;
+  background: #616161;
+  color: #fff;
 }
 
 .btn-fancy {
@@ -6031,6 +6057,7 @@ category: Objects - Typography
 <h6>h6 10px</h6>
 <p>Base font size</p>
 <p class="type-sm">type-sm 12px</p>
+<p class="type-xsm">type-sm 10px</p>
 ```
 
 
@@ -6157,6 +6184,7 @@ h4,
 .h4 {
   font-size: 16px;
   font-size: 1rem;
+  margin-bottom: 0.5em;
 }
 
 h5,
@@ -6167,8 +6195,16 @@ h5,
 
 h6,
 .h6 {
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 11px;
+  font-size: 0.6875rem;
+}
+
+@media screen and (min-width: 900px) {
+  h6,
+  .h6 {
+    font-size: 10px;
+    font-size: 0.625rem;
+  }
 }
 
 .type-sm {
@@ -6178,6 +6214,18 @@ h6,
 
 @media screen and (min-width: 900px) {
   .type-sm {
+    font-size: 7px;
+    font-size: 0.4375rem;
+  }
+}
+
+.type-xsm {
+  font-size: 11px;
+  font-size: 0.6875rem;
+}
+
+@media screen and (min-width: 900px) {
+  .type-xsm {
     font-size: 7px;
     font-size: 0.4375rem;
   }
@@ -7273,8 +7321,45 @@ category: Components - Hamburger
 
 .portfolio-item__description {
   height: 100%;
-  background: rgba(16, 16, 16, 0.96);
-  padding: 20px;
+  background: rgba(16, 16, 16, 0.93);
+  padding: 30px;
+}
+
+.portfolio-item__title {
+  font-size: 22px;
+  font-size: 1.375rem;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 900px) {
+  .portfolio-item__title {
+    font-size: 13px;
+    font-size: 0.8125rem;
+  }
+}
+
+.portfolio-item__subtitle {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+@media screen and (min-width: 900px) {
+  .portfolio-item__subtitle {
+    font-size: 7px;
+    font-size: 0.4375rem;
+  }
+}
+
+.portfolio-item__secondary-text {
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+
+@media screen and (min-width: 900px) {
+  .portfolio-item__secondary-text {
+    font-size: 6px;
+    font-size: 0.375rem;
+  }
 }
 
 .project__navigation {
@@ -7313,10 +7398,25 @@ category: Components - Hamburger
   }
 }
 
-.project__content > p {
-  padding: 20px;
+.project__content {
+  padding: 0 20px 50px;
   max-width: 42em;
   margin: auto;
+}
+
+@media screen and (min-width: 900px) {
+  .project__content {
+    padding: 0 40px 100px;
+  }
+}
+
+.project__content ul {
+  list-style: circle;
+  padding-left: 20px;
+}
+
+.project__content > ul {
+  margin: 20px 0;
 }
 
 .project__content > p + p {
@@ -7324,20 +7424,36 @@ category: Components - Hamburger
 }
 
 .project__content > p > img {
-  margin: 1em 0;
+  margin: 3em 0;
 }
 
-.project__type {
-  padding-bottom: 20px;
-}
-
-.project__skill {
-  margin: 20px 0 50px;
+.project__title {
+  padding-top: 50px;
 }
 
 @media screen and (min-width: 900px) {
-  .project__skill {
-    margin: 20px 0 180px;
+  .project__title {
+    padding-top: 100px;
+  }
+}
+
+.project__type {
+  padding-bottom: 30px;
+}
+
+@media screen and (min-width: 900px) {
+  .project__type {
+    padding-bottom: 100px;
+  }
+}
+
+.project__view-site {
+  padding-bottom: 10px;
+}
+
+@media screen and (min-width: 900px) {
+  .project__view-site {
+    padding-bottom: 30px;
   }
 }
 
