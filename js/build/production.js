@@ -1447,6 +1447,7 @@ trung.plugIns.init();
         onStart: {
           duration: 250,
           render: function (url, $container) {
+            _gaq.push(['_trackPageview', url]);
             content.toggleAnimationClass('is-exiting');
             $body.animate({
               scrollTop: 0
